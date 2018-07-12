@@ -10,7 +10,7 @@ module CriticalPathCss
     end
 
     def fetch
-      @config.routes.map { |route| [route, css_for_route(route)] }.to_h
+      @config.routes.map { |route| [route.controller, css_for_route(route.path)] }.to_h
     end
 
     def fetch_route(route)
